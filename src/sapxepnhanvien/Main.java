@@ -15,9 +15,11 @@ public class Main {
             NhanVien nhanVien = new NhanVien(i,scanner.nextLine(),scanner.nextLine(),scanner.nextLine(),scanner.nextLine(),scanner.nextLine(),scanner.nextLine());
             nhanViens.add(nhanVien);
         }
-        Collections.sort(nhanViens);
-        for (NhanVien nhanVien : nhanViens){
+        Collections.sort(nhanViens,(n1,n2) -> {
+            return n1.getNgaysinh().compareTo(n2.getNgaysinh());
+        });
+        nhanViens.forEach(nhanVien -> {
             System.out.println(nhanVien);
-        }
+        });
     }
 }

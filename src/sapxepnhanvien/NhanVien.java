@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class NhanVien implements Comparable<NhanVien>{
+public class NhanVien {
     private String id;
     private String ten,gioitinh,diachi,masothue;
     private Date ngaysinh,ngaykyhopdong;
@@ -22,13 +22,13 @@ public class NhanVien implements Comparable<NhanVien>{
         this.ngaykyhopdong = new SimpleDateFormat("dd/MM/yyyy").parse(ngaykyhopdong);
     }
 
+    public Date getNgaysinh() {
+        return ngaysinh;
+    }
+
     @Override
     public String toString() {
         return id+" "+ten+" "+gioitinh+" "+new SimpleDateFormat("dd/MM/yyyy").format(ngaysinh)+" "+diachi+" "+masothue+" "+new SimpleDateFormat("dd/MM/yyyy").format(ngaykyhopdong);
     }
 
-    @Override
-    public int compareTo(NhanVien o) {
-        return ngaysinh.compareTo(o.ngaysinh);
-    }
 }

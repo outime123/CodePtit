@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class DemThanhPhanLT {
     static int n, m;
-    static ArrayList<Integer>[] dske = new ArrayList[1001];
-    static boolean chuaxet[] = new boolean[1001];
+    static ArrayList<Integer>[] dske = new ArrayList[1005];
+    static boolean chuaxet[] = new boolean[1005];
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class DemThanhPhanLT {
         while (t-- > 0) {
             n = scanner.nextInt();
             m = scanner.nextInt();
-            for (int i = 0; i <= n; i++) {
+            for (int i = 0; i <= 1000; i++) {
                 dske[i] = new ArrayList<>();
                 chuaxet[i] = true;
             }
@@ -25,6 +25,7 @@ public class DemThanhPhanLT {
                 dske[u].add(v);
                 dske[v].add(u);
             }
+            //dem thanh phan lien thong
             int dem =0;
             for (int i = 1; i <= n ; i++) {
                 if(chuaxet[i]) {

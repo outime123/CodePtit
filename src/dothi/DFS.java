@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class DFS {
     static int n, m;
-    static ArrayList<Integer>[] dske = new ArrayList[1001];
+    static ArrayList<Integer>[] dscanh = new ArrayList[1001];
     static boolean chuaxet[] = new boolean[1001];
 
     public static void main(String[] args) {
@@ -18,13 +18,13 @@ public class DFS {
             m = in.nextInt();
             int s = in.nextInt();
             for (int i = 0; i <= n; i++) {
-                dske[i] = new ArrayList<>();
+                dscanh[i] = new ArrayList<>();
                 chuaxet[i] = true;
             }
             for (int i = 1; i <= m; i++) {
                 int u = in.nextInt(), v = in.nextInt();
-                dske[u].add(v);
-                dske[v].add(u);
+                dscanh[u].add(v);
+                dscanh[v].add(u);
             }
             dfs(s);
             System.out.println();
@@ -34,9 +34,9 @@ public class DFS {
     public static void dfs(int u) {
         System.out.print(u +" ");
         chuaxet[u] = false;
-        for (int i = 0; i < dske[u].size(); i++) {
-            if(chuaxet[dske[u].get(i)]){
-                dfs(dske[u].get(i));
+        for (int i = 0; i < dscanh[u].size(); i++) {
+            if(chuaxet[dscanh[u].get(i)]){
+                dfs(dscanh[u].get(i));
             }
         }
     }

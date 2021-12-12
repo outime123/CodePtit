@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class DemThanhPhanLienThong {
     static int n,m;
-    static List<Integer>[] ds = new ArrayList[22222];
-    static boolean chuaxet[] = new boolean[22222];
+    static List<Integer>[] ds = new ArrayList[20001];
+    static boolean chuaxet[] = new boolean[20001];
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         n= scanner.nextInt();m= scanner.nextInt();
-        for (int i = 0; i <=n; i++) {
+        for (int i = 0; i <20001; i++) {
             ds[i] = new ArrayList<>();
             chuaxet[i] = true;
         }
